@@ -1,7 +1,9 @@
 
 
-export const Products = ({ product }) => {
+export const Products = ({ product, addToCart }) => {
     const {id, name, image, description, price} = product
+    
+
     return (
         <>
             <div className="col-md-6 col-lg-4 my-4 row align-items-center">
@@ -15,6 +17,7 @@ export const Products = ({ product }) => {
                     <button
                         type="button"
                         className="btn btn-dark w-100"
+                        onClick={ () => addToCart(product)}
                     >Agregar al Carrito</button>
                 </div>
             </div>

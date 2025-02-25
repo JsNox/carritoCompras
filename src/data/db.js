@@ -32,7 +32,7 @@ export const db = [
         name: 'Ocean Breeze',
         image: 'perfume_05',
         description: 'Fresco y vibrante, inspirado en la brisa marina con acordes de cítricos y almizcle.',
-        price: 65,
+        price: 1650,
     },
     {
         id: 6,
