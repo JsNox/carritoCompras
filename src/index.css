@@ -44,6 +44,8 @@
   font-size: 10px;
   border-radius: 50%;
   padding: 5px 9px;
+  background-color: #fd7e14;
+  color: white;
 }
 
 #carrito .btn-dark {
@@ -60,18 +62,20 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-  --bs-blue: #0d6efd;
+
+  
+  --bs-blue: #8e7cc3; /* Azul con tono lila */
   --bs-indigo: #6610f2;
-  --bs-purple: #6f42c1;
-  --bs-pink: #d63384;
-  --bs-red: #dc3545;
+  --bs-purple: #9b59b6; /* Lila sofisticado */
+  --bs-pink: #f4a8c1; /* Rosa pastel refinado */
+  --bs-red: #e74c3c; /* Rojo elegante */
   --bs-orange: #fd7e14;
-  --bs-yellow: #ffc107;
+  --bs-yellow: #e3c07a; /* Dorado suave */
   --bs-green: #198754;
   --bs-teal: #20c997;
   --bs-cyan: #0dcaf0;
-  --bs-black: #000;
-  --bs-white: #FFF;
+  --bs-black: #2d2d2d; /* Negro suave */
+  --bs-white: #fdf5e6; /* Blanco perla */
   --bs-gray: #6c757d;
   --bs-gray-dark: #343a40;
   --bs-gray-100: #f8f9fa;
@@ -83,22 +87,22 @@
   --bs-gray-700: #495057;
   --bs-gray-800: #343a40;
   --bs-gray-900: #212529;
-  --bs-primary: #e99401;
-  --bs-secondary: #6c757d;
+  --bs-primary: #c99c33; /* Dorado elegante */
+  --bs-secondary: #f4a8c1; /* Rosa pastel */
   --bs-success: #198754;
   --bs-info: #0dcaf0;
   --bs-warning: #ffc107;
   --bs-danger: #dc3545;
   --bs-light: #f8f9fa;
   --bs-dark: #262626;
-  --bs-primary-rgb: 233, 148, 1;
-  --bs-secondary-rgb: 108, 117, 125;
+  --bs-primary-rgb: 201, 156, 51;
+  --bs-secondary-rgb: 244, 168, 193;
   --bs-success-rgb: 25, 135, 84;
   --bs-info-rgb: 13, 202, 240;
-  --bs-warning-rgb: 255, 193, 7;
-  --bs-danger-rgb: 220, 53, 69;
-  --bs-light-rgb: 248, 249, 250;
-  --bs-dark-rgb: 38, 38, 38;
+ --bs-warning-rgb: 227, 192, 122;
+  --bs-danger-rgb: 231, 76, 60;
+  --bs-dark-rgb: 45, 45, 45;
+  --bs-light-rgb: 253, 245, 230;
   --bs-white-rgb: 255, 255, 255;
   --bs-black-rgb: 0, 0, 0;
   --bs-body-color-rgb: 33, 37, 41;
@@ -159,7 +163,7 @@ body {
   font-family: "Outfit", sans-serif;
   font-weight: 900;
   line-height: 1.2;
-  color: #e99401;
+  color: var(--bs-primary);
 }
 
 h1, .h1 {
@@ -475,38 +479,14 @@ button:not(:disabled),
   opacity: var(--bs-btn-disabled-opacity);
 }
 
-.btn-danger {
-  --bs-btn-color: #FFF;
-  --bs-btn-bg: #dc3545;
-  --bs-btn-border-color: #dc3545;
-  --bs-btn-hover-color: #FFF;
-  --bs-btn-hover-bg: #bb2d3b;
-  --bs-btn-hover-border-color: #b02a37;
-  --bs-btn-focus-shadow-rgb: 225, 83, 97;
-  --bs-btn-active-color: #FFF;
-  --bs-btn-active-bg: #b02a37;
-  --bs-btn-active-border-color: #a52834;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #FFF;
-  --bs-btn-disabled-bg: #dc3545;
-  --bs-btn-disabled-border-color: #dc3545;
-}
+
 
 .btn-dark {
   --bs-btn-color: #FFF;
-  --bs-btn-bg: #262626;
-  --bs-btn-border-color: #262626;
-  --bs-btn-hover-color: #FFF;
+  --bs-btn-bg: var(--bs-dark);
+  --bs-btn-border-color: var(--bs-dark);
   --bs-btn-hover-bg: #474747;
   --bs-btn-hover-border-color: #3c3c3c;
-  --bs-btn-focus-shadow-rgb: 71, 71, 71;
-  --bs-btn-active-color: #FFF;
-  --bs-btn-active-bg: #515151;
-  --bs-btn-active-border-color: #3c3c3c;
-  --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  --bs-btn-disabled-color: #FFF;
-  --bs-btn-disabled-bg: #262626;
-  --bs-btn-disabled-border-color: #262626;
 }
 
 .nav {
@@ -732,7 +712,7 @@ button:not(:disabled),
 .header {
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/headpr.jpg");
   /** TODO: Eliminar la sig linea **/
-  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../public/img/headpr.jpg");
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/headpr.jpg");
   background-position: 50%;
   background-size: cover;
   position: relative;
