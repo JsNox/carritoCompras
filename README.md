@@ -6,7 +6,6 @@ Este es un proyecto de eShop de perfumería desarrollado con **React y Vite**, q
 ## 🚀 Características
 - 🌐 **Interfaz intuitiva** y responsiva.
 - 🛒 **Carrito de compras persistente** usando `localStorage`.
-- 🔍 **Filtrado y búsqueda** de productos.
 - 💳 **Simulación de proceso de compra**.
 - ⚡ **Optimización de rendimiento con Vite**.
 
