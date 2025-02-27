@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import { db } from "../data/db"
 
 export const useCart = () => {
@@ -17,32 +17,32 @@ export const useCart = () => {
     useEffect(() => {
         localStorage.setItem('cart', JSON.stringify(cart))
     }, [cart])
-    
 
-    function addToCart(item){
-        const itemExists = cart.findIndex( product => product.id === item.id )
 
-        if(itemExists >= 0){
-            if(cart[itemExists].quantity >= MAX_ITEMNS) return
+    function addToCart(item) {
+        const itemExists = cart.findIndex(product => product.id === item.id)
+
+        if (itemExists >= 0) {
+            if (cart[itemExists].quantity >= MAX_ITEMNS) return
             const updatedCart = [...cart]
             updatedCart[itemExists].quantity++
             setCart(updatedCart)
-        }else{
+        } else {
             item.quantity = 1
-            setCart ([...cart, item])
-        }       
+            setCart([...cart, item])
+        }
     }
 
-    function removeFromCart(id){
+    function removeFromCart(id) {
         console.log("eliminando")
         setCart(prevCart => prevCart.filter(product => product.id !== id))
     }
 
-    function decreaseQuantity(id){
+    function decreaseQuantity(id) {
         console.log("decremento de ", id)
-        const updatedCart = cart.map ( item => {
-            if(item.id === id && item.quantity > MIN_ITEMS){
-                return{
+        const updatedCart = cart.map(item => {
+            if (item.id === id && item.quantity > MIN_ITEMS) {
+                return {
                     ...item,
                     quantity: item.quantity - 1
                 }
@@ -52,10 +52,10 @@ export const useCart = () => {
         setCart(updatedCart)
     }
 
-    function increaseQuantity(id){
-        const updatedCart = cart.map ( item => {
-            if(item.id === id && item.quantity < MAX_ITEMNS){
-                return{
+    function increaseQuantity(id) {
+        const updatedCart = cart.map(item => {
+            if (item.id === id && item.quantity < MAX_ITEMNS) {
+                return {
                     ...item,
                     quantity: item.quantity + 1
                 }
@@ -69,14 +69,21 @@ export const useCart = () => {
         setCart([])
     }
 
-    return{
+    //State derivado
+    const isEmpty = useMemo(() => cart.length === 0, [cart])
+    const cartTotal = useMemo(() => cart.reduce((total, item) => total + (item.quantity * item.price), 0), [cart])
+
+
+    return {
         data,
         cart,
         addToCart,
         removeFromCart,
         increaseQuantity,
         decreaseQuantity,
-        cleanCart
+        cleanCart,
+        isEmpty,
+        cartTotal
 
     }
 }

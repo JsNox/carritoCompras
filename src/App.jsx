@@ -6,7 +6,8 @@ import { useCart } from "./hooks/useCart"
 
 function App() {
 
-    const { data, cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, cleanCart } = useCart()
+    const { data, cart, addToCart, removeFromCart, increaseQuantity, decreaseQuantity, cleanCart,
+        isEmpty, cartTotal } = useCart()
     
 
     return (
@@ -17,6 +18,8 @@ function App() {
               decreaseQuantity = { decreaseQuantity }
               increaseQuantity = { increaseQuantity }
               cleanCart = { cleanCart }
+              isEmpty = { isEmpty }
+              cartTotal = { cartTotal }
 
             />
 
